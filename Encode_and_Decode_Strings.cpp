@@ -33,7 +33,10 @@ public:
             i++;
         }
         i++;
-       
+        for (int sz : sizes) {
+            res.push_back(s.substr(i, sz));
+            i += sz;
+        }
         return res;
     }
 };
