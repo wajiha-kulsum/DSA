@@ -2,6 +2,19 @@ class Solution {
 public:
     string encode(vector<string>& strs) {
         if (strs.empty()) return "";
+          vector<int> sizes;
+        string res = "";
+        for (string& s : strs) {
+            sizes.push_back(s.size());
+        }
+        for (int sz : sizes) {
+            res += to_string(sz) + ',';
+        }
+        res += '#';
+        for (string& s : strs) {
+            res += s;
+        }
+        return res;
       
     }
 
